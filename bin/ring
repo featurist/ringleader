@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+
+require('pogo');
+require('../src/cli/cli').run(process.argv.slice(2));

@@ -1,27 +1,27 @@
-sys = require 'sys'
+util = require 'util'
 
 exports.Console Server Log (server, port) =
 
     server.on 'job enqueued' @(job)
-        log padded "(job enqueued) #(sys.inspect(job))"
-    
+        log padded "(job enqueued) #(util.inspect(job))"
+
     server.on 'agent started job' @(agent, job)
         log (agent, 'started job', job)
-        
+
     server.on 'agent stdout' @(agent, output)
         log (agent, 'stdout', output)
-    
+
     server.on 'agent stderr' @(agent, output)
         log (agent, 'stderr', output)
 
     server.on 'agent exit' @(agent, code)
         log (agent, 'exit', code)
-    
+
     server.on 'agent job timed out' @(agent, job)
         log (agent, 'job timed out', job)
-    
+
     log (agent, event, args) =
-        log padded ("[agent #(agent.name)] (#(event)) #(sys.inspect (args))")
+        log padded ("[agent #(agent.name)] (#(event)) #(util.inspect (args))")
 
     log padded (message) =
         console.log ("         - #(message)")

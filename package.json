@@ -9,13 +9,13 @@
   "repository": "",
   "author": "",
   "license": "BSD",
-  "devDependencies": {
-    "should": "~1.2.1",
-    "mocha": "~1.8.1"
-  },
   "dependencies": {
-    "socket.io": "~0.9.13",
-    "socket.io-client": "~0.9.11",
-    "pogo": "~0.2.1"
+    "socket.io": "~0.9.16",
+    "socket.io-client": "~0.9.16",
+    "pogo": "~0.6.1"
+  },
+  "devDependencies": {
+    "mocha": "~1.14.0",
+    "should": "~2.1.0"
   }
 }
